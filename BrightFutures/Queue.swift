@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 import Dispatch
-import Result
+
 
 /// Queue is a tiny wrapper around a Grand Central Dispatch queue.
 /// Queue provides a nice syntax for scheduling (async) execution of closures.

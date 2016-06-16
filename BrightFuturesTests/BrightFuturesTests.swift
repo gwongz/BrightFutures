@@ -1200,7 +1200,7 @@ extension BrightFuturesTests {
         let valuePointer = getMutablePointer(value)
     
         
-        dispatch_queue_set_specific(/*Migrator FIXME: Use a variable of type DispatchSpecificKey*/ dispatch_get_main_queue(), &key, valuePointer, nil)
+        dispatch_queue_set_specific(/*Migrator FIXME: Use a variable of type DispatchSpecificKey*/ /*Migrator FIXME: Use a variable of type DispatchSpecificKey*/ dispatch_get_main_queue(), &key, valuePointer, nil)
         XCTAssertEqual(dispatch_get_specific(&key), valuePointer, "value should have been set on the main (i.e. current) queue")
         
         let e = self.expectation()
