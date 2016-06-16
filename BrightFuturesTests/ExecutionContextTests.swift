@@ -59,7 +59,7 @@ class ExecutionContextTests: XCTestCase {
         let value1 = getMutablePointer("queue1")
         
         let queue1 = dispatch_queue_create("test1", DISPATCH_QUEUE_SERIAL)
-        dispatch_queue_set_specific(queue1, &key, value1, nil)
+        dispatch_queue_set_specific(/*Migrator FIXME: Use a variable of type DispatchSpecificKey*/ queue1, &key, value1, nil)
         
         let e1 = self.expectation()
         (toContext(queue1)) {
@@ -70,7 +70,7 @@ class ExecutionContextTests: XCTestCase {
         let value2 = getMutablePointer("queue2")
         
         let queue2 = dispatch_queue_create("test2", DISPATCH_QUEUE_CONCURRENT)
-        dispatch_queue_set_specific(queue2, &key, value2, nil)
+        dispatch_queue_set_specific(/*Migrator FIXME: Use a variable of type DispatchSpecificKey*/ queue2, &key, value2, nil)
         
         let e2 = self.expectation()
         (toContext(queue2)) {
